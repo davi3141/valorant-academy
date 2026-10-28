@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Teko:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #090D12;
+  --foreground: #ECE8E1;
+  --font-teko: 'Teko', sans-serif;
+  --font-rajdhani: 'Rajdhani', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-rajdhani), sans-serif;
+  overflow-x: hidden;
+  letter-spacing: 0.02em;
+}
+
+/* Custom Tactical Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #090D12;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF4655;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00F0FF;
+}
+
+/* Tactical Clip Paths */
+.clip-tactical {
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+}
+
+.clip-button {
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
+.clip-tag {
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+
+.clip-card-header {
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+}
+
+/* Grid & Scanline Backgrounds */
+.bg-tactical-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 70, 85, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 70, 85, 0.06) 1px, transparent 1px);
+}
+
+.bg-tactical-dots {
+  background-image: radial-gradient(rgba(236, 232, 225, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.scanline-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0, 0, 0, 0.25) 50%,
+    rgba(0, 0, 0, 0.25)
+  );
+  background-size: 100% 4px;
+}
+
+/* Radiant Glows */
+.glow-red {
+  box-shadow: 0 0 25px rgba(255, 70, 85, 0.35);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.35);
+}
+
+.glow-gold {
+  box-shadow: 0 0 30px rgba(245, 192, 66, 0.45);
+}
+
+/* Text Glows */
+.text-glow-red {
+  text-shadow: 0 0 12px rgba(255, 70, 85, 0.7);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.7);
+}
+
+/* Crosshair Decorators */
+.crosshair-corner::before,
+.crosshair-corner::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: #FF4655;
+  pointer-events: none;
+}
